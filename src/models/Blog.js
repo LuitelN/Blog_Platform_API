@@ -11,6 +11,7 @@ const blogSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
   tags: [{ type: String }],
   comments: [commentSchema],
+  category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' },
 });
 
 module.exports = mongoose.model('Blog', blogSchema);

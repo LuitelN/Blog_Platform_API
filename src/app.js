@@ -7,11 +7,19 @@ app.use(express.json());
 
 // MongoDB connection
 mongoose.connect('mongodb://localhost:27017/blog_platform', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+  
 });
 
 app.use('/api/blogs', blogRoutes);
+
+
+
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Blog Platform API is running!',
+    status: 'success'
+  });
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
