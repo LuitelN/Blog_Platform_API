@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const blogController = require('../controllers/blogController');
+const auth = require('../middleware/auth');
+const validate = require('../middleware/validate');
 
 // Create a new blog (title, description, category_name required)
-router.post('/', blogController.createBlog);
+router.post('/', auth, validate, blogController.createBlog); // Protected & validated
 
 // Get all blogs, with optional search and sort
 router.get('/', async (req, res) => {
@@ -34,10 +36,10 @@ router.get('/', async (req, res) => {
 router.get('/:id', blogController.getBlog);
 
 // Update a blog by ID (title, description, category_name required)
-router.put('/:id', blogController.updateBlog);
+router.put('/:id', auth, validate, blogController.updateBlog); // Protected & validated
 
 // Delete a blog by ID
-router.delete('/:id', blogController.deleteBlog);
+router.delete('/:id', auth, blogController.deleteBlog); // Protected example
 
 // Add a comment to a blog
 router.post('/:id/comments', blogController.addComment);
