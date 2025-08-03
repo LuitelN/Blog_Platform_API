@@ -5,7 +5,6 @@ const blogRoutes = require('./routes/blogRoutes');
 const app = express();
 app.use(express.json());
 
-// MongoDB connection
 mongoose.connect('mongodb://localhost:27017/blog_platform', {
   
 });
