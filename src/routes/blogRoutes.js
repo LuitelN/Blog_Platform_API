@@ -63,9 +63,7 @@ router.patch('/:id/tags', async (req, res) => {
   }
 });
 
-// (Optional) Secure user login and authentication routes can be added here
 
-// Documentation endpoint
 router.get('/docs', (req, res) => {
   res.json({
     endpoints: {

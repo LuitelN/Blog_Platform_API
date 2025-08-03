@@ -20,7 +20,7 @@ A simple backend API for managing blogs, built with Node.js, Express, and MongoD
    ```sh
    node src/app.js
    ```
-4. Use Postman or curl to interact with the API endpoints (see below).
+4. Use Postman or curl to interact with the API endpoints.
 
 ## Authentication
 - Some routes can be protected using the middleware in `src/middleware/auth.js`.
@@ -31,7 +31,7 @@ A simple backend API for managing blogs, built with Node.js, Express, and MongoD
 
 ## API Endpoints
 - `POST   /api/blogs`           - Create a new blog
-- `GET    /api/blogs`           - Get all blogs (with search/sort)
+- `GET    /api/blogs`           - Get all blogs 
 - `GET    /api/blogs/:id`       - Get a single blog
 - `PUT    /api/blogs/:id`       - Update a blog
 - `DELETE /api/blogs/:id`       - Delete a blog
